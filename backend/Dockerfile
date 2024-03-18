@@ -1,4 +1,4 @@
-FROM centos.7
+FROM centos:7
 LABEL APP="Studentapp"
 LABEL DevopsEngg="shashank"
 USER root
