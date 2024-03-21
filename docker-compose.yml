@@ -5,7 +5,7 @@ services:
   img:
     build:  /root/studentapp-3tire-dockerimage/backend
     container_name : backend
-    network_mode:  brigde
+    network_mode:  bridge
     ports: 
       - 8080:8080
 #frontend
@@ -13,7 +13,7 @@ services:
   frontendimg:  
     build:  /root/studentapp-3tire-dockerimage/frontend
     container_name: frontend
-    network_mode:  brigde
+    network_mode:  bridge
     ports: 
       - 80:80
     
