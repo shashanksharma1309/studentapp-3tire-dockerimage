@@ -1,0 +1,21 @@
+#backend
+version:  '3.8'
+
+services: 
+  img:
+    build:  /root/studentapp-3tire-dockerimage/backend
+    container_name : backend
+    network_mode:  brigde
+    ports: 
+      - 8080:8080
+#frontend
+version:  '3.8'
+
+services:
+  frontendimg:  
+    build:  /root/studentapp-3tire-dockerimage/frontend
+    container_name: frontend
+    network_mode:  brigde
+    ports: 
+      - 80:80
+    
