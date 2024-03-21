@@ -10,7 +10,6 @@ services:
       - 8080:8080
 #frontend
 
-services:
   frontendimg:  
     build:  /root/studentapp-3tire-dockerimage/frontend
     container_name: frontend
