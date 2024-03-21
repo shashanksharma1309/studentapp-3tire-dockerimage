@@ -9,7 +9,6 @@ services:
     ports: 
       - 8080:8080
 #frontend
-version:  '3.8'
 
 services:
   frontendimg:  
