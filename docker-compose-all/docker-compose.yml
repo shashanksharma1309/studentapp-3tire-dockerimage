@@ -1,0 +1,17 @@
+#/root/studentapp-3tire-dockerimage/frontend
+#/root/studentapp-3tire-dockerimage/backend
+
+version:  '3.8'
+
+services: 
+  img:
+    build: .
+    container_name : backend
+    ports: 
+      - 8080:8080
+    build: .
+    container_name: frontend
+    ports: 
+      - 80:80
+      dependson:  "backend"
+    
