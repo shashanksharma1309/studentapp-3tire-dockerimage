@@ -13,9 +13,9 @@ services:
 
   backendimg:
     build:  /root/studentapp-3tire-dockerimage/backend
-    container_name : backend
+    container_name: backend
     ports: 
       - 8080:8080
     network_mode: bridge
     depends_on:
-      - frontending
+      - ["frontending"]
