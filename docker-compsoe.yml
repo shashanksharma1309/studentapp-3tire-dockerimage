@@ -1,1 +1,24 @@
+#frontend
 
+version:  '3.8'
+
+services:
+  frontendimg:  
+    build: ./root/studentapp-3tire-dockerimage/frontend
+    container_name: frontend
+    depends_on: backend
+    ports: 
+      - 80:80
+    network_mode: bridge
+
+#backend
+
+
+  backendimg:
+    build: ./root/studentapp-3tire-dockerimage/backend
+    container_name : backend
+    ports: 
+      - 8080:8080
+    network_mode: bridge
+    depends_on:
+      - "frontending"
