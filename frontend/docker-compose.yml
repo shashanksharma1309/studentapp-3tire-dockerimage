@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-    img:  
+  frontendimg:  
     build: .
     container_name: frontend
     ports: 
