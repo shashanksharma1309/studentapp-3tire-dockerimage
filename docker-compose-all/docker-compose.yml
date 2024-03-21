@@ -1,17 +1,23 @@
 #/root/studentapp-3tire-dockerimage/frontend
 #/root/studentapp-3tire-dockerimage/backend
 
-version:  '3.8'
-
 services: 
-  img:
-    build: .
-    container_name : backend
+  backend:
+    build:  ./root/studentapp-3tire-dockerimage/backend   # Path to the Dockerfile of the backend service
+    container_name: backend
     ports: 
-      - 8080:8080
-    build: .
+      - "8080:8080"    # Expose port 8080 for the backend service
+    networks:
+      - app_network    # Connect both services to the same network
+
+  frontend:
+    build: ./root/studentapp-3tire-dockerimage/frontend   # Path to the Dockerfile of the frontend service
     container_name: frontend
     ports: 
-      - 80:80
-      dependson:  "backend"
-    
+      - "80:80"    # Expose port 80 for the frontend service
+    networks:
+      - app_network    # Connect both services to the same network
+
+networks:
+  app_network:
+    driver: bridge    # Use the bridge network driver for the app network
